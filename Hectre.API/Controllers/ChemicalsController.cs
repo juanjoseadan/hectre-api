@@ -19,18 +19,10 @@ namespace Hectre.API.Controllers
 
 		[HttpGet]
 		[Route("")]
-		public async Task<IActionResult> List([FromQuery] ListChemicalsRequest request)
-		{
-			//throw new NotImplementedException();
-			var result = await _chemicals.GetAsync();
-			return Ok(result);
-		}
+		public async Task<IActionResult> List([FromQuery] ListChemicalsRequest request) => Ok(await _chemicals.GetAsync(request));
 
 		[HttpPost]
 		[Route("")]
-		public async Task<IActionResult> Create([FromBody] CreateChemicalRequest request)
-		{
-			throw new NotImplementedException();
-		}
+		public async Task<IActionResult> Create([FromBody] CreateChemicalRequest request) => Ok(await _chemicals.CreateAsync(request));
 	}
 }

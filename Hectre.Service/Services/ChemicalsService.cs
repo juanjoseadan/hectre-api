@@ -1,4 +1,5 @@
-﻿using Hectre.Service.Interfaces;
+﻿using Hectre.Core.RequestModels;
+using Hectre.Service.Interfaces;
 using Hectre.Storage.MongoDB.Interfaces;
 using Hectre.Storage.MongoDB.Models;
 using System;
@@ -16,12 +17,12 @@ namespace Hectre.Service.Services
             _chemicals = chemicals;
         }
 
-        public async Task<ICollection<Chemical>> GetAsync()
+        public async Task<ICollection<Chemical>> GetAsync(ListChemicalsRequest request)
         {
             return await _chemicals.GetChemicals();
         }
 
-        public async Task<Chemical> CreateAsync()
+        public async Task<Chemical> CreateAsync(CreateChemicalRequest request)
         {
             throw new NotImplementedException();
         }
