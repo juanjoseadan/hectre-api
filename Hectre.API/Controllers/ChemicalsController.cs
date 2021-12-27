@@ -1,11 +1,12 @@
 using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Hectre.Core.RequestModels;
 
 namespace Hectre.API.Controllers
 {
 	[ApiController]
-	[Route("api/v1/[controller]")]
+	[Route("api/v1/chemicals")]
 	public class ChemicalsController : ControllerBase
 	{
 		public ChemicalsController()
@@ -15,7 +16,7 @@ namespace Hectre.API.Controllers
 
 		[HttpGet]
 		[Route("")]
-		public async Task<IActionResult> List()
+		public async Task<IActionResult> List([FromQuery] ListChemicalsRequest request)
 		{
 			throw new NotImplementedException();
 		}
