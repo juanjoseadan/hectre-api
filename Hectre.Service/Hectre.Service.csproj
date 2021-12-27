@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Hectre.Storage.MongoDB\Hectre.Storage.MongoDB.csproj" />
+  </ItemGroup>
+
 </Project>

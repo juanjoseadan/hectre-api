@@ -5,11 +5,11 @@ VisualStudioVersion = 17.0.31919.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hectre.API", "Hectre.API\Hectre.API.csproj", "{C4A33CE3-42EC-4782-AB17-D5A58025C54F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hectre.Data", "Hectre.Data\Hectre.Data.csproj", "{B971C14D-1F49-4C5D-9BF5-8C188A45A831}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hectre.Storage.MongoDB", "Hectre.Storage.MongoDB\Hectre.Storage.MongoDB.csproj", "{B971C14D-1F49-4C5D-9BF5-8C188A45A831}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hectre.Service", "Hectre.Service\Hectre.Service.csproj", "{E92CBECB-3221-45F2-BCED-45D9F4322337}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hectre.Service", "Hectre.Service\Hectre.Service.csproj", "{E92CBECB-3221-45F2-BCED-45D9F4322337}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Hectre.Core", "Hectre.Core\Hectre.Core.csproj", "{7CAD42FA-2C6B-4314-8286-DF2866CFB0B3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Hectre.Core", "Hectre.Core\Hectre.Core.csproj", "{7CAD42FA-2C6B-4314-8286-DF2866CFB0B3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

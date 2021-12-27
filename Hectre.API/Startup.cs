@@ -1,3 +1,8 @@
+using Hectre.Service.Interfaces;
+using Hectre.Service.Services;
+using Hectre.Storage.MongoDB;
+using Hectre.Storage.MongoDB.DataAccess;
+using Hectre.Storage.MongoDB.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,7 +28,13 @@ namespace Hectre.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            var khe = Configuration.GetSection("ChemicalsDB");
+            services.Configure<ChemicalsDatabaseSettings>(Configuration.GetSection("ChemicalsDB"));
+
+            services.AddScoped<IChemicalsDataAccess, ChemicalsDataAccess>();
+            services.AddScoped<IChemicalsService, ChemicalsService>();
+
+            services.AddControllers();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -45,11 +56,10 @@ namespace Hectre.API
 
             app.UseRouting();
 
-            app.UseAuthorization();
+            //app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
 				endpoints.MapControllers();
             });
         }
