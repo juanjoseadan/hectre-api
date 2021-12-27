@@ -1,4 +1,3 @@
-using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Hectre.Core.RequestModels;
@@ -19,7 +18,7 @@ namespace Hectre.API.Controllers
 
 		[HttpGet]
 		[Route("")]
-		public async Task<IActionResult> List([FromQuery] ListChemicalsRequest request) => Ok(await _chemicals.GetAsync(request));
+		public async Task<IActionResult> List([FromQuery] ListChemicalsRequest request) => Ok(await _chemicals.GetAsync(Request.Path.Value, request));
 
 		[HttpPost]
 		[Route("")]

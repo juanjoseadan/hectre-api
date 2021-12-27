@@ -2,8 +2,8 @@ namespace Hectre.Core.RequestModels
 {
 	public class ListChemicalsRequest
 	{
-		public int Take { get; set; } = 10;
+		public int Limit { get; set; } = 10;
 
-		public int Skip { get; set; } = 0;
+		public int Offset { get; set; } = 0;
 	}
 }

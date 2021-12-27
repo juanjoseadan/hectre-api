@@ -6,8 +6,10 @@ namespace Hectre.Storage.MongoDB.Interfaces
 {
     public interface IChemicalsDataAccess
     {
-        Task<ICollection<Chemical>> GetChemicals();
+        Task<ICollection<Chemical>> GetPaginatedAsync(int offset, int limit);
 
-        Task<string> CreateChemical(Chemical chemical);
+        Task<Chemical> CreateAsync(Chemical chemical);
+
+        Task<long> GetTotalAsync();
     }
 }

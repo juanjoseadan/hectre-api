@@ -1,4 +1,4 @@
-using Hectre.Core.Utils;
+using Hectre.Storage.MongoDB.Utils;
 using MongoDB.Bson;
 using MongoDB.Bson.Serialization.Attributes;
 using System;

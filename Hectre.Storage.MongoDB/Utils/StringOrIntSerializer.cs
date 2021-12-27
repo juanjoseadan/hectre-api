@@ -1,7 +1,8 @@
-﻿using MongoDB.Bson.Serialization;
+﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization;
 using System;
 
-namespace Hectre.Core.Utils
+namespace Hectre.Storage.MongoDB.Utils
 {
     public class StringOrIntSerializer : IBsonSerializer
     {
@@ -11,11 +12,11 @@ namespace Hectre.Core.Utils
         {
             switch (context.Reader.CurrentBsonType)
             {
-                case MongoDB.Bson.BsonType.String:
+                case BsonType.String:
                     return context.Reader.ReadString();
-                case MongoDB.Bson.BsonType.Int32:
+                case BsonType.Int32:
                     return context.Reader.ReadInt32().ToString();
-                case MongoDB.Bson.BsonType.Int64:
+                case BsonType.Int64:
                     return context.Reader.ReadInt64().ToString();
                 default:
                     return null;
