@@ -35,7 +35,7 @@ namespace Hectre.Storage.MongoDB.DataAccess
         {
             var collection = _database.GetCollection<Chemical>(_collectionName);
             var filter = Builders<Chemical>.Filter.Where(x => x.deletionDate == null);
-            var sort = Builders<Chemical>.Sort.Ascending(x => x.creationDate);
+            var sort = Builders<Chemical>.Sort.Ascending(x => x.chemicalType);
 
             return await collection
                 .Find(filter)
@@ -49,7 +49,7 @@ namespace Hectre.Storage.MongoDB.DataAccess
         {
             var collection = _database.GetCollection<Chemical>(_collectionName);
             var filter = Builders<Chemical>.Filter.Where(x => x.deletionDate == null);
-            var sort = Builders<Chemical>.Sort.Ascending(x => x.creationDate);
+            var sort = Builders<Chemical>.Sort.Ascending(x => x.chemicalType);
 
             return await collection
                 .Find(filter)
