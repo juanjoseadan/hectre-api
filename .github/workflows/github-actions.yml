@@ -6,11 +6,10 @@ jobs:
     steps:
       - name: Check out repository code
         uses: actions/checkout@v2
-      - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
-      - run: echo "🖥️ The workflow is now ready to test your code on the runner."
-      - name: List files in the repository
+      - name: Test and build
         run: |
           dotnet restore
           dotnet test
           dotnet build
+          dotnet publish -c Release
       - run: echo "🍏 This job's status is ${{ job.status }}."
